@@ -18,7 +18,7 @@ func startServer(port int, db *sql.DB) error {
 		indexHandler(writer, request, db)
 	})
 	http.Handle("/", http.FileServer(getFileSystem()))
-	err := http.ListenAndServe(":"+strconv.Itoa(port), nil)
+	err := http.ListenAndServe("127.0.0.1:"+strconv.Itoa(port), nil)
 	if err != nil {
 		return err
 	}

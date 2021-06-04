@@ -13,14 +13,14 @@ const DDL = `CREATE TABLE IF NOT EXISTS gacha
 					    "item_id"    varchar(100),
 					    "count"      varchar(100),
 					    "time"       varchar(100),
-					    "DDL"       varchar(100),
+					    "name"       varchar(100),
 					    "lang"       varchar(100),
 					    "item_type"  varchar(100),
 					    "rank_type"  varchar(100)
 					)`
 
 func initSqlite() (*sql.DB, error) {
-	db, err := sql.Open("sqlite3", "./data.db")
+	db, err := sql.Open("sqlite3", "./data.sqlite3")
 	if err != nil {
 		return nil, err
 	}
